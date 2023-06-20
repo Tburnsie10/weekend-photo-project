@@ -2,6 +2,7 @@
 
 import './App.css';
 import React, {useState, useEffect} from 'react';
+import Post from './post';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     
   },[]
   )
-  
+
   console.log(posts)
 
 
@@ -26,13 +27,17 @@ function App() {
 
 
     return (
-      <div className="App">
+      <><div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        <div id="posts">
+          {posts.map((post) => {
+            return(<Post post={post}></Post>)
+          } )}
+        </div>
       </div>
+      </>
     );
 }
 
