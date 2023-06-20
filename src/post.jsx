@@ -7,9 +7,9 @@ import './App.css';
 export default function Post({post}){
     return(
         <div id={post.id}>
-             <div id={'image-' + post.id} >
+             <div   className='center-text' id={'image-' + post.id} >
                 <img className='images' src={post.path} />
-                <p>Heyyy</p>
+                <p className='image-text' >{post.description}</p>
             </div>
              <h4>Like</h4>
              {
