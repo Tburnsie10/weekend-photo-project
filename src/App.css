@@ -50,7 +50,6 @@ left:50%;
 transform: translate(-50%, -50%);
 background-color: black;
 opacity: .5;
-visibility: hidden;
 
 }
 
@@ -59,10 +58,6 @@ visibility: hidden;
   color:white;
   
   
-}
-
-.imageText:hover{
-  visibility:visible;
 }
 
 
