@@ -14,6 +14,14 @@ function App() {
     setPosts(data)
   }
 
+  function handleButtonClick(event) {
+    let id = event.target.id
+    console.log(id)
+    fetch(`/gallery/like/${id}`, { method:'PUT',  headers: {    "Content-Type": "application/json"}})
+    getPosts();
+
+  }
+
   useEffect(() => {
     getPosts()
     
@@ -26,6 +34,8 @@ function App() {
 
 
 
+
+
     return (
       <><div className="App">
         <header className="App-header">
@@ -33,7 +43,7 @@ function App() {
         </header>
         <div id="posts">
           {posts.map((post) => {
-            return(<Post post={post}></Post>)
+            return(<Post post={post} handleButtonClick={handleButtonClick}></Post>)
           } )}
         </div>
       </div>
